@@ -9,7 +9,6 @@ spec:
     server: https://kubernetes.default.svc
     namespace: default
   source:
-    chart: DACNPM-cicd
     repoURL: https://github.com/duongtanton/DACNPM-cicd
     targetRevision: HEAD
     path: helm-charts
@@ -19,3 +18,4 @@ spec:
     automated:
       selfHeal: true
       prune: true
+# 48pgmcFkGsXRBX3n
