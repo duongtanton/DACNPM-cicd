@@ -1,0 +1,21 @@
+name: mimo-clone-ui
+labels:
+  service: mimo-clone-ui
+replicas: 1
+image:
+  repository: tonduong/mimo-clone-ui
+  tag: latest
+  pullPolicy: Always
+nameOverride: mimo-clone-ui
+fullnameOverride: mimo-clone-ui
+
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+service:
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 3000
+      name: http
