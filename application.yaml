@@ -5,19 +5,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
-  source:
-    repoURL: https://github.com/duongtanton/DACNPM-cicd
-    targetRevision: HEAD
-    path: dev
   destination: 
     server: https://kubernetes.default.svc
     namespace: default
-
+  source:
+    chart: DACNPM-cicd
+    repoURL: https://github.com/duongtanton/DACNPM-cicd
+    targetRevision: HEAD
+    path: helm-charts
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-
     automated:
       selfHeal: true
       prune: true
