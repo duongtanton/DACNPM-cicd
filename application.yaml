@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: default
   source:
-    repoURL: https://github.com/duongtanton/DACNPM-cicd
+    repoURL: https://github.com/duongtanton/DACNPM-cicd.git
+    path: dacnpm-charts
     targetRevision: HEAD
-    path: helm-charts
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
