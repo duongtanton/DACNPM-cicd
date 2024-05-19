@@ -25,7 +25,6 @@ jobs:
           image: tonduong/api-gateway
           tags: ${{ github.run_number }}
           registry: docker.io
-          directory: api-gateway
           dockerfile: api-gateway/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
