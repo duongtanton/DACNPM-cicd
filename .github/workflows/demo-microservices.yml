@@ -25,7 +25,7 @@ jobs:
           image: tonduong/demo-microservices
           tags: ${{ github.run_number }}
           registry: docker.io
-          directory: ./api-gateway/demo-microservices
+          directory: demo-microservices
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
