@@ -32,6 +32,7 @@ jobs:
       - name: Update demo-microservices/values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
+          repository: https://github.com/duongtanton/DACNPM-cicd
           branch: main
           valueFile: 'dacnpm-charts/charts/demo-microservices/values.yaml'
           propertyPath: 'image.tag'
