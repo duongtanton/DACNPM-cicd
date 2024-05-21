@@ -29,12 +29,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      - uses: actions/checkout@v4
-        with:
-          repository: duongtanton/DACNPM-cicd
-          ref: main
-          path: DACNPM-cicd
-
       - name: Update demo-microservices/values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
