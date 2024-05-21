@@ -49,3 +49,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commitUserName: 'duongtanton'
           commitUserEmail: '20120598@student.hcmus.edu.vn'       
+          masterBranchName: 'main'
+          targetBranch: 'main'
+          createPR: 'false'
