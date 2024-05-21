@@ -33,7 +33,7 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           branch: main
-          valueFile: 'dacnpm-charts/demo-microservices/values.yaml'
+          valueFile: 'dacnpm-charts/charts/demo-microservices/values.yaml'
           propertyPath: 'image.tag'
           value: ${{ github.run_number }}
           message: 'Update demo-microservices/values.yaml to ${{ github.run_number }}'

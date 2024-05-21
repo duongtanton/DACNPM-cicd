@@ -33,7 +33,7 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           branch: main
-          valueFile: 'dacnpm-charts/api-gateway/values.yaml'
+          valueFile: 'dacnpm-charts/charts/api-gateway/values.yaml'
           propertyPath: 'image.tag'
           value: ${{ github.run_number }}
           message: 'Update api-gateway/values.yaml to ${{ github.run_number }}'
