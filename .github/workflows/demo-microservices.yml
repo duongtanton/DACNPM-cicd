@@ -9,7 +9,7 @@ on:
         required: true
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu:latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,10 +29,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
+      - uses: actions/checkout@v4
+        with:
+          repository: duongtanton/DACNPM-cicd
+          ref: main
+          path: DACNPM-cicd
+
       - name: Update demo-microservices/values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
-          repository: https://github.com/duongtanton/DACNPM-cicd
+          repository: duongtanton/DACNPM-cicd
           branch: main
           valueFile: 'dacnpm-charts/charts/demo-microservices/values.yaml'
           propertyPath: 'image.tag'
