@@ -28,5 +28,12 @@ jobs:
           dockerfile: api-gateway/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-      
+    
+      - name: Update api-gateway/values.yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          branch: main
+          valueFile: 'dacnpm-charts/api-gateway/values.yaml'
+          propertyPath: 'image.tag'
+          value: ${{ github.run_number }}
+          message: 'Update api-gateway/values.yaml to ${{ github.run_number }}'

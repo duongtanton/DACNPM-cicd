@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: tonduong/demo-microservices
+  tag: 6
+  pullPolicy: Always
+service:
+  type: NodePort
+  port: 3000
