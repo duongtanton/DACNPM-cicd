@@ -40,15 +40,10 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           repository: duongtanton/DACNPM-cicd
-          branch: main/${{ github.run_number }}
-          targetBranch: main
+          branch: main
           valueFile: 'dacnpm-charts/charts/demo-microservices/values.yaml'
           propertyPath: 'image.tag'
           value: ${{ github.run_number }}
           message: 'Update demo-microservices/values.yaml to ${{ github.run_number }}'
           workDir: infrastructure
           token: ${{ secrets.GITHUB_TOKEN }}
-          commitUserName: 'duongtanton'
-          commitUserEmail: '20120598@student.hcmus.edu.vn'       
-          masterBranchName: main
-          createPR: true
