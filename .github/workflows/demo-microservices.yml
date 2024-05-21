@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          path: build-source
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -22,6 +24,7 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
+          directory: build-source
           image: tonduong/demo-microservices
           tags: ${{ github.run_number }}
           registry: docker.io
@@ -33,17 +36,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: duongtanton/DACNPM-cicd
-          path: infrastructure
+          path: update-source
           token: ${{ secrets.GITHUB_TOKEN }}       
 
       - name: Update demo-microservices/values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
+          workDir: update-source
           repository: duongtanton/DACNPM-cicd
           branch: main
           valueFile: 'dacnpm-charts/charts/demo-microservices/values.yaml'
           propertyPath: 'image.tag'
           value: ${{ github.run_number }}
           message: 'Update demo-microservices/values.yaml to ${{ github.run_number }}'
-          workDir: infrastructure
           token: ${{ secrets.GITHUB_TOKEN }}
