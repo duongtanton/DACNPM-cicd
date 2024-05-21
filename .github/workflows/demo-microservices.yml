@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Checkout Target Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: duongtanton/DACNPM-cicd
           path: infrastructure
@@ -46,5 +46,4 @@ jobs:
           value: ${{ github.run_number }}
           message: 'Update demo-microservices/values.yaml to ${{ github.run_number }}'
           workDir: infrastructure
-          createPR: 'false'
           token: ${{ secrets.GITHUB_TOKEN }}       
