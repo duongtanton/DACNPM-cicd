@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: tonduong/demo-microservices
-  tag: 38
+  tag: 39
   pullPolicy: Always
 service:
   type: NodePort
