@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: tonduong/mimo-clone-ui
-  tag: 14
+  tag: 16
   pullPolicy: Always
 service:
   type: NodePort
