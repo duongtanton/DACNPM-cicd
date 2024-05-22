@@ -45,4 +45,4 @@ jobs:
           git config --global user.email '20120598@student.hcmus.edu.vn'
           git add helm/charts/demo-microservices/values.yaml
           git commit -m "Update image.tag demo-microservices/values.yaml to ${{ github.run_number }}"
-          git push
+          git push origin main
