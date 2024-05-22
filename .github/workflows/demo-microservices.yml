@@ -40,6 +40,7 @@ jobs:
 
       - name: Update image.tag demo-microservices/values.yaml
         run: |
+          cd temp
           sed -i "s/tag: .*/tag: ${{ github.run_number }}/g" helm/charts/demo-microservices/values.yaml
           git config --global user.name 'duongtanton'
           git config --global user.email '20120598@student.hcmus.edu.vn'
