@@ -32,7 +32,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: api-gateway
-          file: api-gateway/Dockerfile
           tags: tonduong/api-gateway:${{ github.run_number }}
           push: true
 
