@@ -29,6 +29,8 @@ jobs:
         run: |
           cd demo-microservices
           curl -O -H "Authorization: token ${{ secrets.TOKEN }}" https://raw.githubusercontent.com/duongtanton/DACNPM-cicd/main/ci/demo-microservices/Dockerfile 
+          ls -la
+          pwd command
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
