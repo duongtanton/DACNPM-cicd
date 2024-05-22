@@ -49,15 +49,3 @@ jobs:
           git config --global user.email '20120598@student.hcmus.edu.vn'
           git commit -m "Update image.tag demo-microservices/values.yaml to ${{ github.run_number }}"
           git push origin main
-      
-      - name: Update image.tag demo-microservices/values.yaml
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_PRIVATE_KEY }}
-          script: |
-            cd /opt/demo-microservices
-            sudo sed -i "s/image: tonduong/demo-microservices: .*/image: tonduong/demo-microservices: ${{ github.run_number }}/g" /opt/demo-microservices/docker-compose.yml
-            sudo docker-compose down --rmi 'all'
-            sudo docker-compose up -d
