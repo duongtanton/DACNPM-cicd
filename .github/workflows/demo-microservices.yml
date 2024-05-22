@@ -9,6 +9,11 @@ on:
         required: true
       TOKEN:
         required: true
+      EC2_HOST:
+        required: true
+      EC2_USERNAME:
+        required: true
+      EC2_PRIVATE_KEY:
 jobs:
   build:
     runs-on: ubuntu-latest
