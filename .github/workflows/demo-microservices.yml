@@ -37,16 +37,11 @@ jobs:
           repository: duongtanton/DACNPM-cicd
           token: ${{ secrets.GITHUB_TOKEN }}       
 
-      - name: Commit update image.tag demo-microservices/values.yaml
+      - name: Update image.tag demo-microservices/values.yaml
         run: |
           sed -i "s/tag: .*/tag: ${{ github.run_number }}/g" helm/charts/demo-microservices/values.yaml
           git config --global user.name 'duongtanton'
           git config --global user.email '20120598@student.hcmus.edu.vn'
           git add helm/charts/demo-microservices/values.yaml
           git commit -m "Update image.tag demo-microservices/values.yaml to ${{ github.run_number }}"
-      - name: Push update image.tag demo-microservices/values.yaml
-        uses: ad-m/github-push-action@master
-        with:
-          repository: duongtanton/DACNPM-cicd
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          git push
