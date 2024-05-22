@@ -26,8 +26,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          push: true
+          context: demo-microservices
+          file: demo-microservices/Dockerfile
           tags: tonduong/demo-microservices:${{ github.run_number }}
+          push: true
 
       - name: Checkout CICD repository
         uses: actions/checkout@v4
