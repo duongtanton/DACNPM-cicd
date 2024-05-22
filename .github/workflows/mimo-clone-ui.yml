@@ -27,9 +27,12 @@ jobs:
       - name: Download Dockerfile
         run: |
           curl -O -H "Authorization: token ${{ secrets.TOKEN }}" https://raw.githubusercontent.com/duongtanton/DACNPM-cicd/main/ci/mimo-clone-ui/Dockerfile
+          ls -la
+          pwd
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
+          context: .
           tags: tonduong/mimo-clone-ui:${{ github.run_number }}
           push: true
 
