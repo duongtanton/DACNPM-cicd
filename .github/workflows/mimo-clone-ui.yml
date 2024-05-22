@@ -44,4 +44,5 @@ jobs:
           git config --global user.name 'duongtanton'
           git config --global user.email '20120598@student.hcmus.edu.vn'
           git commit -m "Update image.tag mimo-clone-ui/values.yaml to ${{ github.run_number }}"
+          git pull
           git push origin main
