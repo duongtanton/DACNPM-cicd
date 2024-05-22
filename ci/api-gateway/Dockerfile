@@ -3,7 +3,7 @@ FROM node:21-alpine AS build
 
 WORKDIR /app
 
-COPY api-gateway/ .
+COPY . .
 
 RUN npm install
 
@@ -12,7 +12,7 @@ RUN npm run test:e2e
 
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 8080
 
 # Start the Next.js application
 CMD ["npm", "start"]

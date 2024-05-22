@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Download Dockerfile
         run: |
-          cd api-gateway
+          cd demo-microservices
           curl -O -H "Authorization: token ${{ secrets.TOKEN }}" https://raw.githubusercontent.com/duongtanton/DACNPM-cicd/main/ci/demo-microservices/Dockerfile 
       - name: Build and push
         uses: docker/build-push-action@v5
