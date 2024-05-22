@@ -39,10 +39,10 @@ jobs:
 
       - name: Commit update image.tag demo-microservices/values.yaml
         run: |
-          sed -i "s/tag: .*/tag: ${{ github.run_number }}/g" dacnpm-charts/charts/demo-microservices/values.yaml
+          sed -i "s/tag: .*/tag: ${{ github.run_number }}/g" helm/charts/demo-microservices/values.yaml
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add dacnpm-charts/charts/demo-microservices/values.yaml
+          git add helm/charts/demo-microservices/values.yaml
           git commit -m "Update image.tag demo-microservices/values.yaml to ${{ github.run_number }}"
       - name: Push update image.tag demo-microservices/values.yaml
         uses: ad-m/github-push-action@master

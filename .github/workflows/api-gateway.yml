@@ -34,7 +34,7 @@ jobs:
         with:
           repository: duongtanton/DACNPM-cicd
           branch: main
-          valueFile: 'dacnpm-charts/charts/api-gateway/values.yaml'
+          valueFile: 'helm/charts/api-gateway/values.yaml'
           propertyPath: 'image.tag'
           value: ${{ github.run_number }}
           message: 'Update api-gateway/values.yaml to ${{ github.run_number }}'

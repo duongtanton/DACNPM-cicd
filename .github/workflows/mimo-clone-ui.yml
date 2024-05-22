@@ -34,7 +34,7 @@ jobs:
         with:
           repository: duongtanton/DACNPM-cicd
           branch: main
-          valueFile: 'dacnpm-charts/charts/mimo-clone-ui/values.yaml'
+          valueFile: 'helm/charts/mimo-clone-ui/values.yaml'
           propertyPath: 'image.tag'
           value: ${{ github.run_number }}
           message: 'Update mimo-clone-ui/values.yaml to ${{ github.run_number }}'
